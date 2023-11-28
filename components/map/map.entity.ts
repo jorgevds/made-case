@@ -1,3 +1,5 @@
+import { LatLngExpression } from "leaflet";
+
 export enum MapHeight {
     FULL = "FULL",
     HALF = "HALF",
@@ -9,4 +11,8 @@ export enum MapHeight {
 export interface MapSizing {
     size: MapHeight;
     opts: { pixels: string };
+}
+
+export interface MapMarker {
+    position: LatLngExpression;
 }

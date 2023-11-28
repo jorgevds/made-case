@@ -1,13 +1,14 @@
-import { Icon, IconOptions, LatLngExpression } from "leaflet";
+import { Icon, IconOptions } from "leaflet";
+import { MapMarker } from "../map.entity";
 
 export interface BikeMapPopup {
     title: string;
     free: number;
     empty: number;
+    id: string;
 }
 
-export interface BikeMapMarker {
-    position: LatLngExpression;
+export interface BikeMapMarker extends MapMarker {
     popup: BikeMapPopup;
 }
 
