@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, useMap, useMapEvent } from "react-leaflet";
 import { MapHeight, MapSizing } from "./map.entity";
 import { useEffect, useMemo } from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "@/store";
+import { RootState } from "@/store/index";
 import { LatLngTuple } from "leaflet";
 
 const computeMapHeight = ({ size, opts }: MapSizing) => {
@@ -33,9 +33,11 @@ const MapController = () => {
 
     useEffect(() => {
         if (!selectedMapMarker) {
-            currentMap.flyTo(currentMap.getCenter());
+            currentMap.setView([51.217222, 4.421111], 14);
+            currentMap.eachLayer((layer) => layer.closePopup());
             return;
         }
+
         currentMap.flyTo(selectedMapMarker.position, 15);
     }, [selectedMapMarker, currentMap]);
 
