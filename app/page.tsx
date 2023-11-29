@@ -1,9 +1,9 @@
-import { Hero } from "@/components";
+import { Hero } from "@/components/index";
 
 export default function Home() {
     return (
-        <main className="flex flex-col min-h-screen items-center justify-between ">
+        <main className="flex flex-col min-h-0 flex-grow items-center justify-between ">
             <Hero />
         </main>
-    )
+    );
 }
