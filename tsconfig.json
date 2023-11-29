@@ -19,7 +19,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/components/*": ["components/*"],
+      "@/store/*": ["store/*"],
+      "test-utils" : ["./testing/test-utils.tsx"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
