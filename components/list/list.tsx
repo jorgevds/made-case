@@ -1,27 +1,15 @@
-import { useMap } from "react-leaflet";
 import { ListItem } from "./list.entity";
 
 export interface ListProps {
     items: ListItem[];
 }
 
-const ListButton: React.FC<{ item: ListItem }> = ({ item }) => {
-    const map = useMap();
-    if (!map) return null;
-
-    const fly = () => {
-        map.flyTo(item.latLng, 14, { duration: 2 });
-    };
-
-    return;
-};
-
 export const List: React.FC<ListProps> = ({ items }) => {
     return (
         <article className="flex flex-wrap bg-white rounded-lg text-red-500 py-4 mb-4 text-left">
             {items.map((item) => (
                 <section
-                    className="py-2 px-4 basis-3/6"
+                    className="py-2 sm:px-4 px-1 sm:basis-3/6 basis-full"
                     key={`Map key for list item with id: ${item.label}`}
                 >
                     <button
