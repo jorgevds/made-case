@@ -22,7 +22,7 @@ export default function RootLayout({
                     crossOrigin=""
                 />
             </head>
-            <body className="flex flex-col">
+            <body>
                 <Header />
                 <ClientProvider>{children}</ClientProvider>
                 <Footer />
